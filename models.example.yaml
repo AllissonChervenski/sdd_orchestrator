@@ -1,0 +1,12 @@
+# Copy to models.yaml and replace the placeholder with an ID from `doctor`.
+# `configure` can generate this file from the currently discovered catalog.
+models:
+  agy: {}
+  opencode: {}
+  codex: {}
+# Example entry beneath a provider:
+#   actual-model-id:
+#     tiers: [balanced, strong]
+#     tier_source: config
+#     capabilities: [coding, testing, implementation]
+#     available: true

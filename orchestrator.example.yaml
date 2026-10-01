@@ -1,0 +1,93 @@
+providers:
+  # Final fallback order only; each role's preference and required capabilities take priority.
+  preference: [codex, opencode, agy]
+  model_tiers:
+    fast: {}
+    balanced: {}
+    strong: {}
+    coding_strong: {}
+roles:
+  constitution: {tier: balanced, required_capabilities: [DOCUMENT_GENERATION, REASONING], preferred_providers: [agy, opencode, codex]}
+  constitution_validator: {tier: balanced, required_capabilities: [VALIDATION, REASONING], preferred_providers: [codex, opencode, agy], prefer_different_provider_from: [constitution]}
+  specification: {tier: balanced, required_capabilities: [DOCUMENT_GENERATION, REASONING], preferred_providers: [agy, codex, opencode]}
+  specification_validator: {tier: balanced, required_capabilities: [VALIDATION, REASONING], preferred_capabilities: [STRUCTURED_OUTPUT], preferred_providers: [codex, agy, opencode], prefer_different_provider_from: [specification]}
+  planning: {tier: balanced, required_capabilities: [REASONING, DOCUMENT_GENERATION], preferred_providers: [codex, agy, opencode]}
+  plan_validator: {tier: balanced, required_capabilities: [VALIDATION, REASONING], preferred_providers: [codex, agy, opencode], prefer_different_provider_from_author: true}
+  tasks: {tier: balanced, required_capabilities: [DOCUMENT_GENERATION, REASONING], preferred_providers: [agy, codex, opencode]}
+  tasks_validator: {tier: balanced, required_capabilities: [VALIDATION, REASONING], preferred_providers: [codex, agy, opencode], prefer_different_provider_from_author: true}
+  consistency_agent: {tier: balanced, required_capabilities: [VALIDATION, REASONING], preferred_providers: [codex, agy, opencode]} # cross_artifact_validator is a deprecated alias
+  test_designer: {tier: coding_strong, required_capabilities: [CODING, FILE_EDITING], preferred_capabilities: [AGENTIC_CODING], preferred_providers: [codex, agy, opencode]}
+  test_validator: {tier: balanced, required_capabilities: [VALIDATION, REASONING], preferred_providers: [codex, agy, opencode], prefer_different_provider_from_author: true}
+  coder: {tier: coding_strong, required_capabilities: [CODING, FILE_EDITING, SHELL], preferred_capabilities: [AGENTIC_CODING], preferred_providers: [opencode, codex, agy]}
+  refactorer: {tier: coding_strong, required_capabilities: [CODING, FILE_EDITING], preferred_capabilities: [AGENTIC_CODING], preferred_providers: [opencode, codex, agy]}
+  code_reviewer: {tier: balanced, required_capabilities: [VALIDATION, CODING], preferred_providers: [codex, agy, opencode], prefer_different_provider_from_author: true}
+  final_reviewer: {tier: balanced, required_capabilities: [VALIDATION, REASONING], preferred_providers: [codex, agy, opencode], prefer_different_provider_from_author: true}
+timeouts:
+  provider: 600
+  verification: 600
+retries:
+  artifact_generation: 3
+  implementation: 3
+  review: 2
+routing:
+  adaptive_routing_mode: observe # observe or assist; observe never changes policy selection
+  historical_min_samples: 10
+  decay_half_life_days: 30
+  exploration_rate: 0.05 # applies only in assist when compatible alternatives exist
+cost_optimization:
+  mode: observe # observe, assist, adaptive; only observe is enabled by default
+  profile: balanced # economical, balanced, quality
+  capability_failures_to_escalate: 2
+  # Desired IDs are checked against each provider's discovered catalog before use.
+  ladder:
+    - {level: LUNA, provider: codex, model: gpt-6-luna}
+    - {level: SOL, provider: codex, model: gpt-6-sol}
+    - {level: SONNET, provider: agy, model: claude-sonnet-4-6}
+    - {level: ASTRA, provider: codex, model: gpt-6-astra}
+  extraordinary_fallback: {provider: agy, model: claude-opus-4-6-thinking}
+  economical_coding_models:
+    - {provider: opencode, model: opencode-go/qwen3.8-flash}
+    - {provider: opencode, model: opencode-go/kimi-k2.7-code}
+  quality_priors:
+    "opencode-go/kimi-k2.7-code": {LOW: 0.94, MEDIUM: 0.89, HIGH: 0.85}
+  allow_automatic_opus: false
+  strong_model_budgets:
+    sol: {task: 3, workflow: 20}
+    sonnet: {task: 2, workflow: 8}
+    astra: {task: 1, workflow: 2}
+    opus: {task: 0, workflow: 0}
+execution_policies:
+  prompt_fallback: true # only when explicitly configured; native skills are not assumed
+  ponytail_roles: [coder, refactorer]
+  caveman_excluded_roles: []
+real_run:
+  safety_mode: strict
+  max_agent_calls_per_task: 12
+  max_agent_calls_per_workflow: 100
+  max_retries: 3
+  max_wall_time: 7200
+  file_scopes:
+    test_designer: [tests/, fixtures/, conftest.py, pytest.ini, tox.ini]
+    coder: task # each task declares allowed_files
+    refactorer: task
+    test_validator: []
+    code_reviewer: []
+human_gates:
+  mode: interactive
+  constitution_change: true
+  high_impact_architecture: true
+verification:
+  # Suggestions are emitted by `python -m orchestrator configure`; review before execution.
+  task_tests: []
+  regression_tests: []
+  build: []
+  tests: []
+  lint: []
+  type: []
+  syntax: []
+  static: []
+  requirements: [] # [{requirement_id: FR-018, checks: [{name: queue overflow, command: [python, -m, pytest, -q, tests/test_queue.py]}]}]
+git:
+  checkpoint_per_task: true
+logging:
+  level: INFO

@@ -1,0 +1,70 @@
+{
+  "models": {
+    "agy": {
+      "gemini-3.8-flash-low": {
+        "tiers": ["fast"],
+        "tier_source": "config",
+        "capabilities": ["reasoning", "validation", "document_generation"]
+      },
+      "gemini-3.8-flash-medium": {
+        "tiers": ["balanced", "fast"],
+        "tier_source": "config",
+        "capabilities": ["reasoning", "validation", "planning", "review", "document_generation"]
+      },
+      "gemini-3.8-flash-high": {
+        "tiers": ["fast", "balanced", "coding_strong"],
+        "tier_source": "config",
+        "capabilities": ["coding", "testing", "implementation", "validation", "reasoning", "document_generation", "refactoring"]
+      },
+      "gemini-3.1-pro-high": {
+        "tiers": ["strong"],
+        "tier_source": "config",
+        "capabilities": ["reasoning_strong", "architecture", "complex_validation"]
+      },
+      "claude-sonnet-4-6": {
+        "tiers": ["coding_strong", "balanced", "strong"],
+        "tier_source": "config",
+        "capabilities": ["reasoning", "reasoning_strong", "coding", "refactoring", "code_review", "architecture", "validation", "document_generation"]
+      }
+    },
+    "opencode": {
+      "opencode-go/mimo-v2.6-pro": {
+        "tiers": ["balanced", "coding_strong", "strong"],
+        "tier_source": "config",
+        "capabilities": ["reasoning", "reasoning_strong", "validation", "document_generation", "coding", "testing", "planning", "review", "refactoring"]
+      },
+      "opencode-go/kimi-k3": {
+        "tiers": ["coding_strong", "balanced"],
+        "tier_source": "config",
+        "capabilities": ["coding", "testing", "implementation", "refactoring", "code_review"]
+      },
+      "opencode-go/qwen3.8-flash": {
+        "tiers": ["fast", "coding_strong"],
+        "tier_source": "config",
+        "capabilities": ["coding", "testing", "implementation", "basic_refactoring"]
+      },
+      "opencode-go/kimi-k2.7-code": {
+        "tiers": ["coding_strong", "balanced"],
+        "tier_source": "config",
+        "capabilities": ["coding", "testing", "implementation", "refactoring", "code_review"]
+      }
+    },
+    "codex": {
+      "gpt-6-luna": {
+        "tiers": ["fast", "balanced", "coding_strong"],
+        "tier_source": "config",
+        "capabilities": ["reasoning", "validation", "planning", "review", "coding"]
+      },
+      "gpt-6-sol": {
+        "tiers": ["balanced", "coding_strong", "strong"],
+        "tier_source": "config",
+        "capabilities": ["reasoning", "reasoning_strong", "coding", "coding_strong", "architecture", "complex_validation", "document_generation"]
+      },
+      "gpt-6-astra": {
+        "tiers": ["strong"],
+        "tier_source": "config",
+        "capabilities": ["reasoning_strong", "architecture", "extreme_fallback"]
+      }
+    }
+  }
+}
