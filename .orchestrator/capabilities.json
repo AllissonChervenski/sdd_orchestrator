@@ -1,0 +1,1591 @@
+{
+  "agy": {
+    "provider": "agy",
+    "cli_available": true,
+    "cli_version": "1.2.13",
+    "models": [
+      "gemini-3.8-flash-high",
+      "gemini-3.8-flash-medium",
+      "gemini-3.8-flash-low",
+      "gemini-3.7-flash-high",
+      "gemini-3.7-flash-medium",
+      "gemini-3.7-flash-low",
+      "gemini-3.6-flash-high",
+      "gemini-3.6-flash-medium",
+      "gemini-3.6-flash-low",
+      "gemini-3.1-pro-high",
+      "gemini-3.1-pro-low",
+      "claude-sonnet-4-6",
+      "claude-opus-4-6-thinking",
+      "gpt-oss-120b-medium"
+    ],
+    "supports_headless": true,
+    "supports_json": true,
+    "supports_sessions": true,
+    "supports_model_selection": true,
+    "supports_agent_selection": true,
+    "supports_file_editing": true,
+    "supports_shell": true,
+    "capabilities": [
+      "AGENTIC_CODING",
+      "CODING",
+      "DOCUMENT_GENERATION",
+      "FAST",
+      "FILE_EDITING",
+      "REASONING",
+      "SHELL",
+      "STRUCTURED_OUTPUT",
+      "VALIDATION"
+    ],
+    "metadata": {
+      "help": "Usage of agy:\n  --add-dir                       Add a directory to the workspace (repeatable) (default [])\n  --agent                         Agent for the current CLI session\n  -c                              Short alias for --continue\n  --continue                      Continue the most recent conversation\n  --conversation                  Resume a previous conversation by ID\n  --dangerously-skip-permissions  Auto-approve all tool permission requests without prompting\n  --disable-slash-commands        Disable slash command and skill expansion in print mode\n  --effort                        Reasoning effort for the current CLI session (low|medium|high|max)\n  -i                              Short alias for --prompt-interactive\n  --input-format                  Input format for print mode (text, stream-json). stream-json reads one NDJSON message per line from stdin and runs a turn for each; it requires --output-format stream-json (default text)\n  --json-schema                   Optional JSON schema string or path to a schema file to enforce structured output (for stream-json, only applicable to the final result)\n  --log-file                      Override CLI log file path\n  --mode                          Set the agent execution mode for this session (accept-edits, plan)\n  --model                         Model for the current CLI session\n  --new-project                   Create a new project for this session\n  --output-format                 Output format for print mode (text, json, stream-json) (default text)\n  -p                              Short alias for --print\n  --print                         Run a single prompt non-interactively and print the response\n  --print-timeout                 Optional time limit for print mode; 0 waits until the turn completes (default 0s)\n  --project                       Project ID or project name for the current CLI session\n  --prompt                        Alias for --print\n  --prompt-interactive            Run an initial prompt interactively and continue the session\n  --remote-control                Create a remote connection for the CLI session on start up\n  --sandbox                       Run in a sandbox with terminal restrictions enabled\n\nAvailable subcommands:\n  agent           List available agents\n  agents          List available agents\n  changelog       Show changelog and release notes\n  help            Show help for subcommands\n  install         Configure environment paths and shell settings\n  mcp             Manage MCP servers (add, remove, list, enable, disable)\n  mic-serve       Serve this machine's microphone to a CLI on another host\n  models          List available models\n  plugin          Manage plugins (install, uninstall, list, enable, disable)\n  plugins         Alias for plugin\n  remote-control  Manage the remote-control background daemon (start, status, stop)\n  update          Update CLI",
+      "errors": [],
+      "model_discovery_error": null,
+      "capability_source": "provider behavior and observed CLI flags"
+    },
+    "model_details": [
+      {
+        "provider": "agy",
+        "model_id": "gemini-3.8-flash-high",
+        "display_name": "Gemini 3.8 Flash (High)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "gemini-3.8-flash-medium",
+        "display_name": "Gemini 3.8 Flash (Medium)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "gemini-3.8-flash-low",
+        "display_name": "Gemini 3.8 Flash (Low)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "gemini-3.7-flash-high",
+        "display_name": "Gemini 3.7 Flash (High)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "gemini-3.7-flash-medium",
+        "display_name": "Gemini 3.7 Flash (Medium)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "gemini-3.7-flash-low",
+        "display_name": "Gemini 3.7 Flash (Low)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "gemini-3.6-flash-high",
+        "display_name": "Gemini 3.6 Flash (High)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "gemini-3.6-flash-medium",
+        "display_name": "Gemini 3.6 Flash (Medium)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "gemini-3.6-flash-low",
+        "display_name": "Gemini 3.6 Flash (Low)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "gemini-3.1-pro-high",
+        "display_name": "Gemini 3.1 Pro (High)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "gemini-3.1-pro-low",
+        "display_name": "Gemini 3.1 Pro (Low)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "claude-sonnet-4-6",
+        "display_name": "Claude Sonnet 4.6 (Thinking)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "claude-opus-4-6-thinking",
+        "display_name": "Claude Opus 4.6 (Thinking)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      },
+      {
+        "provider": "agy",
+        "model_id": "gpt-oss-120b-medium",
+        "display_name": "GPT-OSS 120B (Medium)",
+        "available": true,
+        "context_window": null,
+        "supports_coding": null,
+        "supports_reasoning": null,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "agy --output-format json models",
+        "confidence": "high",
+        "metadata": {}
+      }
+    ],
+    "supports_ponytail": null,
+    "supports_caveman": null
+  },
+  "opencode": {
+    "provider": "opencode",
+    "cli_available": true,
+    "cli_version": "1.18.31",
+    "models": [
+      "opencode/big-pickle",
+      "opencode/ling-3.0-flash-fin-free",
+      "opencode/longcat-2.5-preview-free",
+      "opencode/mimo-v2.6-flash-free",
+      "opencode/muse-spark-1.3-contributor-free",
+      "opencode/nemotron-3-ultra-free",
+      "opencode/nemotron-3.5-lightning-free",
+      "opencode/space-bunny-free",
+      "opencode-go/deepseek-v4-flash",
+      "opencode-go/deepseek-v4-flash-vision-exp",
+      "opencode-go/deepseek-v4-pro",
+      "opencode-go/deepseek-v4.1-flash",
+      "opencode-go/glm-5.2",
+      "opencode-go/glm-5.3",
+      "opencode-go/glm-5.3-flash",
+      "opencode-go/gpt-5.6-luna",
+      "opencode-go/gpt-6-luna",
+      "opencode-go/grok-4.6",
+      "opencode-go/grok-4.7",
+      "opencode-go/hy3",
+      "opencode-go/hy4-preview",
+      "opencode-go/kimi-k2.7-code",
+      "opencode-go/kimi-k3",
+      "opencode-go/longcat-2.0",
+      "opencode-go/longcat-2.5-preview-free",
+      "opencode-go/mimo-v2.5",
+      "opencode-go/mimo-v2.5-pro",
+      "opencode-go/mimo-v2.6-flash",
+      "opencode-go/mimo-v2.6-pro",
+      "opencode-go/minimax-m2.7",
+      "opencode-go/minimax-m3",
+      "opencode-go/muse-spark-1.2-contributor",
+      "opencode-go/muse-spark-1.3-contributor",
+      "opencode-go/qwen3.7-plus",
+      "opencode-go/qwen3.8-flash",
+      "opencode-go/qwen3.8-max",
+      "opencode-go/space-bunny-free"
+    ],
+    "supports_headless": true,
+    "supports_json": true,
+    "supports_sessions": true,
+    "supports_model_selection": true,
+    "supports_agent_selection": true,
+    "supports_file_editing": true,
+    "supports_shell": true,
+    "capabilities": [
+      "AGENTIC_CODING",
+      "CODING",
+      "DOCUMENT_GENERATION",
+      "FAST",
+      "FILE_EDITING",
+      "REASONING",
+      "SHELL",
+      "STRUCTURED_OUTPUT",
+      "VALIDATION"
+    ],
+    "metadata": {
+      "help": "\u2800                                \u2584     \n\u2588\u2580\u2580\u2588 \u2588\u2580\u2580\u2588 \u2588\u2580\u2580\u2588 \u2588\u2580\u2580\u2584 \u2588\u2580\u2580\u2580 \u2588\u2580\u2580\u2588 \u2588\u2580\u2580\u2588 \u2588\u2580\u2580\u2588\n\u2588  \u2588 \u2588  \u2588 \u2588\u2580\u2580\u2580 \u2588  \u2588 \u2588    \u2588  \u2588 \u2588  \u2588 \u2588\u2580\u2580\u2580\n\u2580\u2580\u2580\u2580 \u2588\u2580\u2580\u2580 \u2580\u2580\u2580\u2580 \u2580  \u2580 \u2580\u2580\u2580\u2580 \u2580\u2580\u2580\u2580 \u2580\u2580\u2580\u2580 \u2580\u2580\u2580\u2580\n\nCommands:\n  opencode completion          generate shell completion script\n  opencode acp                 start ACP (Agent Client Protocol) server\n  opencode mcp                 manage MCP (Model Context Protocol) servers\n  opencode [project]           start opencode tui                                          [default]\n  opencode attach <url>        attach to a running opencode server\n  opencode run [message..]     run opencode with a message\n  opencode debug               debugging and troubleshooting tools\n  opencode providers           manage AI providers and credentials                   [aliases: auth]\n  opencode agent               manage agents\n  opencode upgrade [target]    upgrade opencode to the latest or a specific version\n  opencode uninstall           uninstall opencode and remove all related files\n  opencode serve               starts a headless opencode server\n  opencode web                 start opencode server and open web interface\n  opencode models [provider]   list all available models\n  opencode stats               show token usage and cost statistics\n  opencode export [sessionID]  export session data as JSON\n  opencode import <file>       import session data from JSON file or URL\n  opencode github              manage GitHub agent\n  opencode pr <number>         fetch and checkout a GitHub PR branch, then run opencode\n  opencode session             manage sessions\n  opencode plugin <module>     install plugin and update config                      [aliases: plug]\n  opencode db                  database tools\n\nPositionals:\n  project  path to start opencode in                                                        [string]\n\nOptions:\n  -h, --help          show help                                                            [boolean]\n  -v, --version       show version number                                                  [boolean]\n      --print-logs    print logs to stderr                                                 [boolean]\n      --log-level     log level                 [string] [choices: \"DEBUG\", \"INFO\", \"WARN\", \"ERROR\"]\n      --pure          run without external plugins                                         [boolean]\n      --port          port to listen on                                        [number] [default: 0]\n      --hostname      hostname to listen on                          [string] [default: \"127.0.0.1\"]\n      --mdns          enable mDNS service discovery (defaults hostname to 0.0.0.0)\n                                                                          [boolean] [default: false]\n      --mdns-domain   custom domain name for mDNS service (default: opencode.local)\n                                                                [string] [default: \"opencode.local\"]\n      --cors          additional domains to allow for CORS                     [array] [default: []]\n  -m, --model         model to use in the format of provider/model                          [string]\n  -c, --continue      continue the last session                                            [boolean]\n  -s, --session       session id to continue                                                [string]\n      --fork          fork the session when continuing (use with --continue or --session)  [boolean]\n      --prompt        prompt to use                                                         [string]\n      --agent         agent to use                                                          [string]\n      --auto          auto-approve permissions that are not explicitly denied (dangerous!)\n                                                                          [boolean] [default: false]\n      --mini          start the minimal interactive interface             [boolean] [default: false]\n      --no-replay     disable mini session history replay on resume and after resize       [boolean]\n      --replay-limit  cap visible mini replay to the newest N messages                      [number]",
+      "run_help": "opencode run [message..]\n\nrun opencode with a message\n\nPositionals:\n  message  message to send                                                     [array] [default: []]\n\nOptions:\n  -h, --help         show help                                                             [boolean]\n  -v, --version      show version number                                                   [boolean]\n      --print-logs   print logs to stderr                                                  [boolean]\n      --log-level    log level                  [string] [choices: \"DEBUG\", \"INFO\", \"WARN\", \"ERROR\"]\n      --pure         run without external plugins                                          [boolean]\n      --command      the command to run, use message for args                               [string]\n  -c, --continue     continue the last session                                             [boolean]\n  -s, --session      session id to continue                                                 [string]\n      --fork         fork the session before continuing (requires --continue or --session) [boolean]\n      --share        share the session                                                     [boolean]\n  -m, --model        model to use in the format of provider/model                           [string]\n      --agent        agent to use                                                           [string]\n      --format       format: default (formatted) or json (raw JSON events)\n                                          [string] [choices: \"default\", \"json\"] [default: \"default\"]\n  -f, --file         file(s) to attach to message                                            [array]\n      --title        title for the session (uses truncated prompt if no value provided)     [string]\n      --attach       attach to a running opencode server (e.g., http://localhost:4096)      [string]\n  -p, --password     basic auth password (defaults to OPENCODE_SERVER_PASSWORD)             [string]\n  -u, --username     basic auth username (defaults to OPENCODE_SERVER_USERNAME or 'opencode')\n                                                                                            [string]\n      --dir          directory to run in, path on remote server if attaching                [string]\n      --port         port for the local server (defaults to random port if no value provided)\n                                                                                            [number]\n      --variant      model variant (provider-specific reasoning effort, e.g., high, max, minimal)\n                                                                                            [string]\n      --thinking     show thinking blocks                                                  [boolean]\n  -i, --interactive  run in direct interactive split-footer mode          [boolean] [default: false]\n      --auto         auto-approve permissions that are not explicitly denied (dangerous!)\n                                                                          [boolean] [default: false]",
+      "errors": [],
+      "model_discovery_error": null,
+      "capability_source": "provider behavior and observed CLI flags"
+    },
+    "model_details": [
+      {
+        "provider": "opencode",
+        "model_id": "opencode/big-pickle",
+        "display_name": "Big Pickle",
+        "available": true,
+        "context_window": 200000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "big-pickle",
+          "toolcall": true,
+          "input_cost": 0,
+          "output_cost": 0
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode/ling-3.0-flash-fin-free",
+        "display_name": "Ling 3.0 Flash Fin Free",
+        "available": true,
+        "context_window": 262144,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "ling",
+          "toolcall": true,
+          "input_cost": 0,
+          "output_cost": 0
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode/longcat-2.5-preview-free",
+        "display_name": "LongCat 2.5 Preview Free",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "longcat",
+          "toolcall": true,
+          "input_cost": 0,
+          "output_cost": 0
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode/mimo-v2.6-flash-free",
+        "display_name": "MiMo-V2.6-Flash Free",
+        "available": true,
+        "context_window": 200000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "mimo",
+          "toolcall": true,
+          "input_cost": 0,
+          "output_cost": 0
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode/muse-spark-1.3-contributor-free",
+        "display_name": "Muse Spark 1.3 Free",
+        "available": true,
+        "context_window": 1048576,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "muse-free",
+          "toolcall": true,
+          "input_cost": 0,
+          "output_cost": 0
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode/nemotron-3-ultra-free",
+        "display_name": "Nemotron 3 Ultra Free",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "nemotron-free",
+          "toolcall": true,
+          "input_cost": 0,
+          "output_cost": 0
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode/nemotron-3.5-lightning-free",
+        "display_name": "Nemotron 3.5 Lightning Free",
+        "available": true,
+        "context_window": 262144,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "nemotron-free",
+          "toolcall": true,
+          "input_cost": 0,
+          "output_cost": 0
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode/space-bunny-free",
+        "display_name": "Space Bunny Free",
+        "available": true,
+        "context_window": 1048576,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": null,
+          "toolcall": true,
+          "input_cost": 0,
+          "output_cost": 0
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/deepseek-v4-flash",
+        "display_name": "DeepSeek V4 Flash",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "deepseek-flash",
+          "toolcall": true,
+          "input_cost": 0.15,
+          "output_cost": 0.6
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/deepseek-v4-flash-vision-exp",
+        "display_name": "DeepSeek V4 Flash Vision Exp",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "deepseek-flash",
+          "toolcall": true,
+          "input_cost": 0.15,
+          "output_cost": 0.6
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/deepseek-v4-pro",
+        "display_name": "DeepSeek V4 Pro (New)",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "deepseek-thinking",
+          "toolcall": true,
+          "input_cost": 0.66,
+          "output_cost": 1.98
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/deepseek-v4.1-flash",
+        "display_name": "DeepSeek V4.1 Flash",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "deepseek-flash",
+          "toolcall": true,
+          "input_cost": 0.15,
+          "output_cost": 0.6
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/glm-5.2",
+        "display_name": "GLM-5.2",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "glm",
+          "toolcall": true,
+          "input_cost": 1.4,
+          "output_cost": 4.4
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/glm-5.3",
+        "display_name": "GLM-5.3",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "glm",
+          "toolcall": true,
+          "input_cost": 1.4,
+          "output_cost": 4.4
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/glm-5.3-flash",
+        "display_name": "GLM-5.3-Flash",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "glm-flash",
+          "toolcall": true,
+          "input_cost": 0.15,
+          "output_cost": 0.5
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/gpt-5.6-luna",
+        "display_name": "GPT-5.6 Luna",
+        "available": true,
+        "context_window": 1050000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "gpt-luna",
+          "toolcall": true,
+          "input_cost": 0.2,
+          "output_cost": 1.2
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/gpt-6-luna",
+        "display_name": "GPT-6 Luna",
+        "available": true,
+        "context_window": 1050000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "gpt-luna",
+          "toolcall": true,
+          "input_cost": 0.1,
+          "output_cost": 0.5
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/grok-4.6",
+        "display_name": "Grok 4.6",
+        "available": true,
+        "context_window": 500000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "grok",
+          "toolcall": true,
+          "input_cost": 2,
+          "output_cost": 6
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/grok-4.7",
+        "display_name": "Grok 4.7",
+        "available": true,
+        "context_window": 500000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "grok",
+          "toolcall": true,
+          "input_cost": 2,
+          "output_cost": 6
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/hy3",
+        "display_name": "Hy3",
+        "available": true,
+        "context_window": 256000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "Hy",
+          "toolcall": true,
+          "input_cost": 0.14,
+          "output_cost": 0.58
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/hy4-preview",
+        "display_name": "Hy4 preview",
+        "available": true,
+        "context_window": 1024000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "Hy",
+          "toolcall": true,
+          "input_cost": 0.834,
+          "output_cost": 2.501
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/kimi-k2.7-code",
+        "display_name": "Kimi K2.7 Code",
+        "available": true,
+        "context_window": 262144,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "kimi-k2",
+          "toolcall": true,
+          "input_cost": 0.95,
+          "output_cost": 4
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/kimi-k3",
+        "display_name": "Kimi K3",
+        "available": true,
+        "context_window": 1048576,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "kimi-k3",
+          "toolcall": true,
+          "input_cost": 3,
+          "output_cost": 15
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/longcat-2.0",
+        "display_name": "LongCat-2.0",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "longcat",
+          "toolcall": true,
+          "input_cost": 0.3,
+          "output_cost": 1.2
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/longcat-2.5-preview-free",
+        "display_name": "LongCat 2.5 Preview Free",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "longcat",
+          "toolcall": true,
+          "input_cost": 0,
+          "output_cost": 0
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/mimo-v2.5",
+        "display_name": "MiMo V2.5",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "mimo-v2.5",
+          "toolcall": true,
+          "input_cost": 0.14,
+          "output_cost": 0.28
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/mimo-v2.5-pro",
+        "display_name": "MiMo V2.5 Pro",
+        "available": true,
+        "context_window": 1048576,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "mimo-v2.5-pro",
+          "toolcall": true,
+          "input_cost": 0.435,
+          "output_cost": 0.87
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/mimo-v2.6-flash",
+        "display_name": "MiMo-V2.6-Flash",
+        "available": true,
+        "context_window": 1048576,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "mimo",
+          "toolcall": true,
+          "input_cost": 0.14,
+          "output_cost": 0.28
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/mimo-v2.6-pro",
+        "display_name": "MiMo-V2.6-Pro",
+        "available": true,
+        "context_window": 1048576,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "mimo",
+          "toolcall": true,
+          "input_cost": 0.435,
+          "output_cost": 0.87
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/minimax-m2.7",
+        "display_name": "MiniMax-M2.7",
+        "available": true,
+        "context_window": 204800,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "minimax-m2.7",
+          "toolcall": true,
+          "input_cost": 0.3,
+          "output_cost": 1.2
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/minimax-m3",
+        "display_name": "MiniMax-M3",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "minimax-m3",
+          "toolcall": true,
+          "input_cost": 0.3,
+          "output_cost": 1.2
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/muse-spark-1.2-contributor",
+        "display_name": "Muse Spark 1.2 Contributor",
+        "available": true,
+        "context_window": 1048576,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "muse",
+          "toolcall": true,
+          "input_cost": 0.1,
+          "output_cost": 0.2
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/muse-spark-1.3-contributor",
+        "display_name": "Muse Spark 1.3 Contributor",
+        "available": true,
+        "context_window": 1048576,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "muse",
+          "toolcall": true,
+          "input_cost": 0.1,
+          "output_cost": 0.2
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/qwen3.7-plus",
+        "display_name": "Qwen3.7 Plus",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "qwen3.7-plus",
+          "toolcall": true,
+          "input_cost": 0.4,
+          "output_cost": 1.6
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/qwen3.8-flash",
+        "display_name": "Qwen3.8 Flash",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "qwen",
+          "toolcall": true,
+          "input_cost": 0.15,
+          "output_cost": 0.47
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/qwen3.8-max",
+        "display_name": "Qwen3.8 Max",
+        "available": true,
+        "context_window": 1000000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": "qwen3.8-max",
+          "toolcall": true,
+          "input_cost": 2,
+          "output_cost": 6
+        }
+      },
+      {
+        "provider": "opencode",
+        "model_id": "opencode-go/space-bunny-free",
+        "display_name": "Space Bunny Free",
+        "available": true,
+        "context_window": 1048576,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "opencode models --verbose",
+        "confidence": "high",
+        "metadata": {
+          "family": null,
+          "toolcall": true,
+          "input_cost": 0,
+          "output_cost": 0
+        }
+      }
+    ],
+    "supports_ponytail": null,
+    "supports_caveman": null
+  },
+  "codex": {
+    "provider": "codex",
+    "cli_available": true,
+    "cli_version": "codex-cli 0.155.1",
+    "models": [
+      "gpt-6-astra",
+      "gpt-6-sol",
+      "gpt-6-luna",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gpt-5.5"
+    ],
+    "supports_headless": true,
+    "supports_json": true,
+    "supports_sessions": true,
+    "supports_model_selection": true,
+    "supports_agent_selection": false,
+    "supports_file_editing": true,
+    "supports_shell": true,
+    "capabilities": [
+      "AGENTIC_CODING",
+      "CODING",
+      "DOCUMENT_GENERATION",
+      "FAST",
+      "FILE_EDITING",
+      "REASONING",
+      "SHELL",
+      "STRUCTURED_OUTPUT",
+      "VALIDATION"
+    ],
+    "metadata": {
+      "help": "Codex CLI\n\nIf no subcommand is specified, options will be forwarded to the interactive CLI.\n\nUsage: codex [OPTIONS] [PROMPT]\n       codex [OPTIONS] <COMMAND> [ARGS]\n\nCommands:\n  agents            Browse all agent sessions on the shared local app-server daemon\n  exec              Run Codex non-interactively [aliases: e]\n  review            Run a code review non-interactively\n  login             Manage login\n  logout            Remove stored authentication credentials\n  mcp               Manage external MCP servers for Codex\n  plugin            Manage Codex plugins\n  app-server        [experimental] Run the app server or related tooling\n  remote-control    [experimental] Manage the app-server daemon with remote control enabled\n  completion        Generate shell completion scripts\n  update            Update Codex to the latest version\n  doctor            Diagnose local Codex installation, config, auth, and runtime health\n  sandbox           Run commands within a Codex-provided sandbox\n  debug             Debugging tools\n  apply             Apply the latest diff produced by Codex agent as a `git apply` to your local\n                    working tree [aliases: a]\n  resume            Resume a previous interactive session (picker by default; use --last to continue\n                    the most recent)\n  queue             Queue a message for an existing session\n  archive           Archive a saved session by id or session name\n  delete            Permanently delete a saved session by id or session name\n  migrate-rollouts  Inspect or migrate legacy local sessions to paginated thread history\n  unarchive         Unarchive a saved session by id or session name\n  fork              Fork a previous interactive session (picker by default; use --last to fork the\n                    most recent)\n  cloud             [EXPERIMENTAL] Browse tasks from Codex Cloud and apply changes locally\n  exec-server       [EXPERIMENTAL] Run the standalone exec-server service\n  features          Inspect feature flags\n  help              Print this message or the help of the given subcommand(s)\n\nArguments:\n  [PROMPT]\n          Optional user prompt to start the session\n\nOptions:\n  -c, --config <key=value>\n          Override a configuration value that would otherwise be loaded from `~/.codex/config.toml`.\n          Use a dotted path (`foo.bar.baz`) to override nested values. The `value` portion is parsed\n          as TOML. If it fails to parse as TOML, the raw string is used as a literal.\n          \n          Examples: - `-c model=\"o3\"` - `-c 'sandbox_permissions=[\"disk-full-read-access\"]'` - `-c\n          shell_environment_policy.inherit=all`\n\n      --enable <FEATURE>\n          Enable a feature (repeatable). Equivalent to `-c features.<name>=true`\n\n      --disable <FEATURE>\n          Disable a feature (repeatable). Equivalent to `-c features.<name>=false`\n\n      --remote <ADDR>\n          Connect the TUI to a remote app server endpoint.\n          \n          Accepted forms: `ws://host:port`, `wss://host:port`, `unix://`, or `unix://PATH`.\n\n      --remote-auth-token-env <ENV_VAR>\n          Name of the environment variable containing the bearer token to send to a remote app\n          server websocket\n\n      --strict-config\n          Error out when config.toml contains fields that are not recognized by this version of\n          Codex\n\n  -i, --image <FILE>...\n          Optional image(s) to attach to the initial prompt\n\n  -m, --model <MODEL>\n          Model the agent should use\n\n      --oss\n          Use open-source provider\n\n      --local-provider <OSS_PROVIDER>\n          Specify which local provider to use (lmstudio or ollama). If not specified with --oss,\n          will use config default or show selection\n\n  -p, --profile <CONFIG_PROFILE_V2>\n          Layer $CODEX_HOME/<name>.config.toml on top of the base user config\n\n  -s, --sandbox <SANDBOX_MODE>\n          Select the sandbox policy to use when executing model-generated shell commands\n          \n          [possible values: read-only, workspace-write, danger-full-access]\n\n      --approve-for-me\n          Route approval requests through automatic review using the workspace-write sandbox\n\n      --dangerously-bypass-approvals-and-sandbox\n          Skip all confirmation prompts and execute commands without sandboxing. EXTREMELY\n          DANGEROUS. Intended solely for running in environments that are externally sandboxed\n\n      --dangerously-bypass-hook-trust\n          Run enabled hooks without requiring persisted hook trust for this invocation. DANGEROUS.\n          Intended only for automation that already vets hook sources\n\n  -C, --cd <DIR>\n          Tell the agent to use the specified directory as its working root\n\n      --worktree\n          Run the session in a new managed Git worktree\n\n      --add-dir <DIR>\n          Additional directories that should be writable alongside the primary workspace\n\n  -a, --ask-for-approval <APPROVAL_POLICY>\n          Configure when the model requires human approval before executing a command\n\n          Possible values:\n          - on-request: The model decides when to ask the user for approval\n          - never:      Never ask for user approval Execution failures are immediately returned to\n            the model\n\n      --search\n          Enable live web search. When enabled, the native Responses `web_search` tool is available\n          to the model (no per\u2011call approval)\n\n      --no-alt-screen\n          Disable alternate screen mode\n          \n          Runs the TUI in inline mode, preserving terminal scrollback history.\n\n  -h, --help\n          Print help (see a summary with '-h')\n\n  -V, --version\n          Print version",
+      "exec_help": "Run Codex non-interactively\n\nUsage: codex exec [OPTIONS] [PROMPT]\n       codex exec [OPTIONS] <COMMAND> [ARGS]\n\nCommands:\n  resume  Resume a previous session by id or pick the most recent with --last\n  fork    Fork a previous session by id into a new session\n  review  Run a code review against the current repository\n  help    Print this message or the help of the given subcommand(s)\n\nArguments:\n  [PROMPT]\n          Initial instructions for the agent. If not provided as an argument (or if `-` is used),\n          instructions are read from stdin. If stdin is piped and a prompt is also provided, stdin\n          is appended as a `<stdin>` block\n\nOptions:\n  -c, --config <key=value>\n          Override a configuration value that would otherwise be loaded from `~/.codex/config.toml`.\n          Use a dotted path (`foo.bar.baz`) to override nested values. The `value` portion is parsed\n          as TOML. If it fails to parse as TOML, the raw string is used as a literal.\n          \n          Examples: - `-c model=\"o3\"` - `-c 'sandbox_permissions=[\"disk-full-read-access\"]'` - `-c\n          shell_environment_policy.inherit=all`\n\n      --enable <FEATURE>\n          Enable a feature (repeatable). Equivalent to `-c features.<name>=true`\n\n      --disable <FEATURE>\n          Disable a feature (repeatable). Equivalent to `-c features.<name>=false`\n\n      --strict-config\n          Error out when config.toml contains fields that are not recognized by this version of\n          Codex\n\n  -i, --image <FILE>...\n          Optional image(s) to attach to the initial prompt\n\n  -m, --model <MODEL>\n          Model the agent should use\n\n      --oss\n          Use open-source provider\n\n      --local-provider <OSS_PROVIDER>\n          Specify which local provider to use (lmstudio or ollama). If not specified with --oss,\n          will use config default or show selection\n\n  -p, --profile <CONFIG_PROFILE_V2>\n          Layer $CODEX_HOME/<name>.config.toml on top of the base user config\n\n  -s, --sandbox <SANDBOX_MODE>\n          Select the sandbox policy to use when executing model-generated shell commands\n          \n          [possible values: read-only, workspace-write, danger-full-access]\n\n      --approve-for-me\n          Route approval requests through automatic review using the workspace-write sandbox\n\n      --dangerously-bypass-approvals-and-sandbox\n          Skip all confirmation prompts and execute commands without sandboxing. EXTREMELY\n          DANGEROUS. Intended solely for running in environments that are externally sandboxed\n\n      --dangerously-bypass-hook-trust\n          Run enabled hooks without requiring persisted hook trust for this invocation. DANGEROUS.\n          Intended only for automation that already vets hook sources\n\n  -C, --cd <DIR>\n          Tell the agent to use the specified directory as its working root\n\n      --worktree\n          Run the session in a new managed Git worktree\n\n      --add-dir <DIR>\n          Additional directories that should be writable alongside the primary workspace\n\n      --thread-source <SOURCE>\n          Source classification for newly created or forked threads\n\n      --skip-git-repo-check\n          Allow running Codex outside a Git repository\n\n      --ephemeral\n          Run without persisting session files to disk\n\n      --ignore-user-config\n          Do not load `$CODEX_HOME/config.toml`; auth still uses `CODEX_HOME`\n\n      --ignore-rules\n          Do not load user or project execpolicy `.rules` files\n\n      --output-schema <FILE>\n          Path to a JSON Schema file describing the model's final response shape\n\n      --color <COLOR>\n          Specifies color settings for use in the output\n          \n          [default: auto]\n          [possible values: always, never, auto]\n\n      --json\n          Print events to stdout as JSONL\n\n  -o, --output-last-message <FILE>\n          Specifies file where the last message from the agent should be written\n\n  -h, --help\n          Print help (see a summary with '-h')\n\n  -V, --version\n          Print version",
+      "errors": [],
+      "model_catalog_available": true,
+      "model_discovery_error": null,
+      "capability_source": "provider behavior and observed CLI flags"
+    },
+    "model_details": [
+      {
+        "provider": "codex",
+        "model_id": "gpt-6-astra",
+        "display_name": "GPT-6-Astra",
+        "available": true,
+        "context_window": 272000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "codex debug models",
+        "confidence": "high",
+        "metadata": {
+          "description": "Frontier intelligence for the most demanding work.",
+          "priority": 2,
+          "default_reasoning_level": "low",
+          "supported_reasoning_levels": [
+            {
+              "effort": "low",
+              "description": "Fast responses with lighter reasoning"
+            },
+            {
+              "effort": "medium",
+              "description": "Balances speed and reasoning depth for everyday tasks"
+            },
+            {
+              "effort": "high",
+              "description": "Greater reasoning depth for complex problems"
+            },
+            {
+              "effort": "xhigh",
+              "description": "Extra high reasoning depth for complex problems"
+            },
+            {
+              "effort": "max",
+              "description": "Maximum reasoning depth for the hardest problems"
+            },
+            {
+              "effort": "ultra",
+              "description": "Maximum reasoning with automatic task delegation"
+            }
+          ]
+        }
+      },
+      {
+        "provider": "codex",
+        "model_id": "gpt-6-sol",
+        "display_name": "GPT-6-Sol",
+        "available": true,
+        "context_window": 272000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "codex debug models",
+        "confidence": "high",
+        "metadata": {
+          "description": "Previous generation workhorse model.",
+          "priority": 3,
+          "default_reasoning_level": "medium",
+          "supported_reasoning_levels": [
+            {
+              "effort": "low",
+              "description": "Fast responses with lighter reasoning"
+            },
+            {
+              "effort": "medium",
+              "description": "Balances speed and reasoning depth for everyday tasks"
+            },
+            {
+              "effort": "high",
+              "description": "Greater reasoning depth for complex problems"
+            },
+            {
+              "effort": "xhigh",
+              "description": "Extra high reasoning depth for complex problems"
+            },
+            {
+              "effort": "max",
+              "description": "Maximum reasoning depth for the hardest problems"
+            },
+            {
+              "effort": "ultra",
+              "description": "Maximum reasoning with automatic task delegation"
+            }
+          ]
+        }
+      },
+      {
+        "provider": "codex",
+        "model_id": "gpt-6-luna",
+        "display_name": "GPT-6-Luna",
+        "available": true,
+        "context_window": 272000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "codex debug models",
+        "confidence": "high",
+        "metadata": {
+          "description": "Fast and affordable model for easier tasks.",
+          "priority": 4,
+          "default_reasoning_level": "medium",
+          "supported_reasoning_levels": [
+            {
+              "effort": "low",
+              "description": "Fast responses with lighter reasoning"
+            },
+            {
+              "effort": "medium",
+              "description": "Balances speed and reasoning depth for everyday tasks"
+            },
+            {
+              "effort": "high",
+              "description": "Greater reasoning depth for complex problems"
+            },
+            {
+              "effort": "xhigh",
+              "description": "Extra high reasoning depth for complex problems"
+            },
+            {
+              "effort": "max",
+              "description": "Maximum reasoning depth for the hardest problems"
+            }
+          ]
+        }
+      },
+      {
+        "provider": "codex",
+        "model_id": "gpt-5.6-sol",
+        "display_name": "GPT-5.6-Sol",
+        "available": true,
+        "context_window": 272000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "codex debug models",
+        "confidence": "high",
+        "metadata": {
+          "description": "Older generation workhorse model.",
+          "priority": 5,
+          "default_reasoning_level": "low",
+          "supported_reasoning_levels": [
+            {
+              "effort": "low",
+              "description": "Fast responses with lighter reasoning"
+            },
+            {
+              "effort": "medium",
+              "description": "Balances speed and reasoning depth for everyday tasks"
+            },
+            {
+              "effort": "high",
+              "description": "Greater reasoning depth for complex problems"
+            },
+            {
+              "effort": "xhigh",
+              "description": "Extra high reasoning depth for complex problems"
+            },
+            {
+              "effort": "max",
+              "description": "Maximum reasoning depth for the hardest problems"
+            },
+            {
+              "effort": "ultra",
+              "description": "Maximum reasoning with automatic task delegation"
+            }
+          ]
+        }
+      },
+      {
+        "provider": "codex",
+        "model_id": "gpt-5.6-terra",
+        "display_name": "GPT-5.6-Terra",
+        "available": true,
+        "context_window": 272000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "codex debug models",
+        "confidence": "high",
+        "metadata": {
+          "description": "Older balanced model for straightforward work.",
+          "priority": 8,
+          "default_reasoning_level": "medium",
+          "supported_reasoning_levels": [
+            {
+              "effort": "low",
+              "description": "Fast responses with lighter reasoning"
+            },
+            {
+              "effort": "medium",
+              "description": "Balances speed and reasoning depth for everyday tasks"
+            },
+            {
+              "effort": "high",
+              "description": "Greater reasoning depth for complex problems"
+            },
+            {
+              "effort": "xhigh",
+              "description": "Extra high reasoning depth for complex problems"
+            },
+            {
+              "effort": "max",
+              "description": "Maximum reasoning depth for the hardest problems"
+            },
+            {
+              "effort": "ultra",
+              "description": "Maximum reasoning with automatic task delegation"
+            }
+          ]
+        }
+      },
+      {
+        "provider": "codex",
+        "model_id": "gpt-5.6-luna",
+        "display_name": "GPT-5.6-Luna",
+        "available": true,
+        "context_window": 272000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "codex debug models",
+        "confidence": "high",
+        "metadata": {
+          "description": "Older fast and efficient model.",
+          "priority": 9,
+          "default_reasoning_level": "medium",
+          "supported_reasoning_levels": [
+            {
+              "effort": "low",
+              "description": "Fast responses with lighter reasoning"
+            },
+            {
+              "effort": "medium",
+              "description": "Balances speed and reasoning depth for everyday tasks"
+            },
+            {
+              "effort": "high",
+              "description": "Greater reasoning depth for complex problems"
+            },
+            {
+              "effort": "xhigh",
+              "description": "Extra high reasoning depth for complex problems"
+            },
+            {
+              "effort": "max",
+              "description": "Maximum reasoning depth for the hardest problems"
+            }
+          ]
+        }
+      },
+      {
+        "provider": "codex",
+        "model_id": "gpt-5.5",
+        "display_name": "GPT-5.5",
+        "available": true,
+        "context_window": 272000,
+        "supports_coding": null,
+        "supports_reasoning": true,
+        "supports_structured_output": null,
+        "supports_file_editing": null,
+        "supports_shell": null,
+        "supports_agentic_work": null,
+        "speed_class": null,
+        "cost_class": null,
+        "metadata_source": "codex debug models",
+        "confidence": "high",
+        "metadata": {
+          "description": "Legacy coding model.",
+          "priority": 13,
+          "default_reasoning_level": "medium",
+          "supported_reasoning_levels": [
+            {
+              "effort": "low",
+              "description": "Fast responses with lighter reasoning"
+            },
+            {
+              "effort": "medium",
+              "description": "Balances speed and reasoning depth for everyday tasks"
+            },
+            {
+              "effort": "high",
+              "description": "Greater reasoning depth for complex problems"
+            },
+            {
+              "effort": "xhigh",
+              "description": "Extra high reasoning depth for complex problems"
+            }
+          ]
+        }
+      }
+    ],
+    "supports_ponytail": null,
+    "supports_caveman": null
+  }
+}
