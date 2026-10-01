@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+.orchestrator/build/
+.orchestrator/pip-cache/
+.orchestrator/state/orchestrator.sqlite3
+logs/
+.orchestrator/model-selection.md
+.orchestrator/reports/
+.orchestrator/runs/
